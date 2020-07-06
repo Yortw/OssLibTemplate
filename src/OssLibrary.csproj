@@ -20,11 +20,18 @@
     <Compile Remove="articles\**" />
     <Compile Remove="images\**" />
     <Compile Remove="_site\**" />
-    <EmbeddedResource Remove="images\**" />
+		<Compile Remove="TestResults\**" />
+		<EmbeddedResource Remove="images\**" />
     <None Remove="api\**" />
-    <None Remove="articles\**" />
+		<None Remove="TestResults\**" />
+		<None Remove="articles\**" />
     <None Remove="images\**" />
     <None Remove="_site\**" />
+		<None Remove="Directory.Build.props" />
+		<None Remove="docfx.json" />
+		<None Remove="log.txt" />
+		<None Remove="index.md" />
+    <None Remove="toc.yml" />
     <None Include="images\projecticon128.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -54,17 +61,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <Compile Update="ErrorMessage.Designer.cs">
+    <Compile Update="ErrorMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ErrorMessage.resx</DependentUpon>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ErrorMessage.resx">
+    <EmbeddedResource Update="ErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ErrorMessage.Designer.cs</LastGenOutput>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

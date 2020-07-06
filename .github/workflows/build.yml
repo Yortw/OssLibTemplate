@@ -13,6 +13,7 @@ jobs:
     env:
       TestSecret: ${{ secrets.TestSecret }}    
       Coveralls_Token: ${{ secrets.Coveralls_Token }}   
+      Nuget_UploadKey: ${{ secrets.NUGET_TOKEN }}
 
     steps:
     - uses: actions/checkout@v2
@@ -65,4 +66,4 @@ jobs:
         name: artifacts
         path: ./artifacts
     - name: Publish packages
-      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key ${{secrets.NUGET_TOKEN}}
+      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key $Env:Nuget_UploadKey
